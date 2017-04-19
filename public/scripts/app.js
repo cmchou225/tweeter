@@ -51,31 +51,11 @@ $(function onReady() {
     }
   ];
 
-  function escape(str) {
-    var div = document.createElement('div');
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  }
+  Handlebars.registerHelper('fromNow', (time) => moment(time).fromNow());
 
-  function createTweetElement (data){
-    return `
-    <article class="tweet">
-      <header>
-        <img class="profile-pic" src="${escape(data.user.avatars.small)}">
-        <h2 class="profile-name">${escape(data.user.name)}</h2>
-        <p class="handle">${escape(data.user.handle)}</p>
-      </header>
-      <p>${escape(data.content.text)}</p>
-      <footer class="clearfix">
-        <p class="tweet-date">${moment(data.created_at).fromNow()}</p>
-        <div class="icons">
-          <i class="fa fa-heart" aria-hidden="true"></i>
-          <i class="fa fa-flag" aria-hidden="true"></i>
-          <i class="fa fa-retweet" aria-hidden="true"></i>
-        </div>
-      </footer>
-    </article>`;
-  }
-  $(".tweet-container").append(data.map(createTweetElement));
+  const tempText = $('#tweet-temp').text();
+  const templateCompiled = Handlebars.compile(tempText);
 
-});
+  $(".tweet-container").append(data.map(templateCompiled));
+
+})

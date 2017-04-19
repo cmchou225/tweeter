@@ -44,23 +44,25 @@
         </form>
       </section>
       <section class="tweet-container" id="tweets">
-        <article class="tweet">
-          <header>
-            <img class="profile-pic" src="/images/cat2.png">
-            <h2 class="profile-name">BILLY BOB </h2>
-            <p class="handle">@BBOB</p>
-          </header>
-          <p>Check out this cat doing cat things with other cats who are also cats that may or may not have cat-like features but are still considered cats in all intents and purposes.</p>
-          <footer class="clearfix">
-            <p class="tweet-date">Posted 10 mins ago</p>
-            <div class="icons">
-              <i class="fa fa-heart" aria-hidden="true"></i>
-              <i class="fa fa-flag" aria-hidden="true"></i>
-              <i class="fa fa-retweet" aria-hidden="true"></i>
-            </div>
-          </footer>
-        </article>
-      </section>
+        <script type="text/x-handlebars-template" id="tweet-temp">
+          <article class="tweet">
+            <header>
+              <img class="profile-pic" src="{{user.avatars.small}}">
+              <h2 class="profile-name">{{user.name}}</h2>
+              <p class="handle">{{user.handle}}</p>
+            </header>
+            <p>{{content.text}}</p>
+            <footer class="clearfix">
+              <p class="tweet-date">{{fromNow created_at}}</p>
+              <div class="icons">
+                <i class="fa fa-heart" aria-hidden="true"></i>
+                <i class="fa fa-flag" aria-hidden="true"></i>
+                <i class="fa fa-retweet" aria-hidden="true"></i>
+              </div>
+            </footer>
+          </article>
+        </section>
+      </script>
     </main>
   </body>
 </html>
