@@ -34,3 +34,8 @@
 .counter.overLimit {
   color: red;
 }
+
+.error.overLimit {
+  color: red;
+  transition: opacity 500 ease-in-out;
+}

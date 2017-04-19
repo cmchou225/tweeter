@@ -11,25 +11,35 @@ $(function onReady() {
   const $form = $('.container form');
 
   function renderTweets(data){
-    $('.tweet-container').empty();
-    $('.tweet-container').prepend(data.reverse().map(templateCompiled));
+    $('.tweet-container').empty()
+                         .append(data.reverse().map(templateCompiled));
   }
 
   function loadTweets (){
     $.ajax({
       url: '/tweets',
       method: 'GET',
-    }).then((data) => renderTweets(data));
+    }).then((data) => {
+      renderTweets(data)});
   }
 
   $form.on('submit', function () {
     event.preventDefault();
+    const inputLength = $(this).find('textarea').val().length;
+    console.log(inputLength);
+    if(inputLength > 0 && inputLength <= 140){
+      $.ajax({
+        url: '/tweets',
+        method: 'POST',
+        data: $(this).serialize()
+      }).then(loadTweets);
+      $(this).find('textarea').val('');
+      $(this).find('.counter').text('140');
+    } else if(inputLength === 0){
+      $(this).find('.error').text(`Sorry! Can't submit empty tweets.`);
+      setTimeout(() => $(this).find('.error').text(''), 1500);
+    }
 
-    $.ajax({
-      url: '/tweets',
-      method: 'POST',
-      data: $(this).serialize()
-      }).then(loadTweets());
     });
 
   loadTweets();
