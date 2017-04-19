@@ -4,6 +4,7 @@
   position: fixed;
   background-color: #00a087;
   padding: 0 2em;
+  z-index: 1;
 }
 
 #nav-bar .logo {
