@@ -1,0 +1,77 @@
+
+.clearfix:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+.tweet {
+  background-color: #eeeeee;
+  border-radius: 10px;
+  border: 1px solid gray;
+  opacity: 0.6;
+  transition: 0.3s ease-out;
+}
+
+.tweet:hover {
+  opacity: 1;
+  transition: 0.3s ease-in;
+}
+
+.tweet .profile-pic {
+  float: left;
+  width: 50px;
+  border-radius: 10px;
+  padding-top: ;
+  height: 60px;
+  padding: 1% 0;
+
+}
+
+.tweet .profile-name {
+  float: left;
+  margin: 0 10px;
+  line-height: 60px;
+}
+
+.tweet header {
+  height: 60px;
+  background-color: green;
+  padding: 0 3% 1%;
+  border-top-right-radius: 9px;
+  border-top-left-radius: 9px;
+  background-color: #c7f9d2;
+
+
+}
+.tweet .handle {
+  float: right;
+  line-height: 10px;
+  padding: 0;
+
+}
+
+.tweet .tweet-date{
+  font-size: 0.85em;
+  margin: 0;
+  float:left;
+}
+
+.tweet footer {
+  padding-bottom: 4%;
+  padding-right: 3%;
+}
+
+.tweet .icons{
+  float:right;
+  opacity: 0;
+  transition: 0.5s all-ease-out;
+}
+
+.tweet:hover .icons{
+  opacity: 1;
+  transition: 1s all-ease-in;
+}
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Information -->
+    <title>Tweeter - Home Page</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300i,700i" rel="stylesheet">
+
+
+    <!-- App CSS -->
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweetArticle.css" type="text/css" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <!-- External JS -->
+    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Top nav bar (fixed) -->
+    <nav id="nav-bar">
+      <img class="logo" src="/images/bird.png">
+      <span class="header">Tweeter</span>
+    </nav>
+
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form action="/tweets/" method="">
+          <textarea name="text" placeholder="What are you humming about?"></textarea>
+          <input type="submit" value="Tweet">
+          <span class="counter">140</span>
+        </form>
+      </section>
+      <article class="tweet">
+        <header>
+          <img class="profile-pic" src="/images/cat2.png">
+          <h2 class="profile-name">BILLY BOB </h2>
+          <p class="handle">@BBOB</p>
+        </header>
+        <p>Check out this cat doing cat things with other cats who are also cats that may or may not have cat-like features but are still considered cats in all intents and purposes.</p>
+        <footer class="clearfix">
+          <p class="tweet-date">Posted 10 mins ago</p>
+          <div class="icons">
+            <i class="fa fa-heart" aria-hidden="true"></i>
+            <i class="fa fa-flag" aria-hidden="true"></i>
+            <i class="fa fa-retweet" aria-hidden="true"></i>
+          </div>
+        </footer>
+      </article>
+    </main>
+
+  </body>
+</html>
