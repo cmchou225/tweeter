@@ -19,8 +19,7 @@ $(function onReady() {
     $.ajax({
       url: '/tweets',
       method: 'GET',
-    }).then((data) => {
-      renderTweets(data)});
+    }).then((data) => renderTweets(data));
   }
 
   $form.on('submit', function () {
@@ -41,6 +40,10 @@ $(function onReady() {
     }
 
     });
+
+  $('.compose').on('click', () => {
+    $('.new-tweet').slideToggle('slow').find('textarea').focus();
+  });
 
   loadTweets();
 });

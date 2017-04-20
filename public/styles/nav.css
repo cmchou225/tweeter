@@ -22,9 +22,26 @@
   padding: 0 0 0 5px;
 }
 
-.container {
-  width: 450px;
+
+#nav-bar .compose {
+  float: right;
+  margin: 10px 0 0 0;
   background-color: white;
-  padding: 110px 2em;
-  margin: auto;
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 60px;
+  font-size: 1.3em;
+  color: #00a087;
+  opacity: 0.7;
+  transition: 0.3s ease-out;
+}
+
+#nav-bar .compose:hover{
+  opacity: 1;
+  color: black;
+  transition: 0.3s ease-in;
+}
+
+.compose i {
+  padding-right: 5px;
 }

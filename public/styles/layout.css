@@ -23,6 +23,14 @@ body {
 
 .container p {
   padding: 0 3%;
+
+}
+
+.container {
+  width: 450px;
+  background-color: white;
+  padding: 110px 2em;
+  margin: auto;
 }
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
