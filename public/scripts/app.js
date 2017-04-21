@@ -19,24 +19,27 @@ $(function onReady() {
     $.ajax({
       url: '/tweets',
       method: 'GET',
-    }).then((data) => renderTweets(data));
+    }).then(renderTweets)
+
   }
 
   $form.on('submit', function () {
     event.preventDefault();
-    const inputLength = $(this).find('textarea').val().length;
-    console.log(inputLength);
+    const $textArea = $(this).find('textarea');
+    const $error = $(this).find('.error');
+    const inputLength = $textArea.val().length;
+
     if(inputLength > 0 && inputLength <= 140){
       $.ajax({
         url: '/tweets',
         method: 'POST',
         data: $(this).serialize()
       }).then(loadTweets);
-      $(this).find('textarea').val('');
+      $textArea.val('');
       $(this).find('.counter').text('140');
     } else if(inputLength === 0){
-      $(this).find('.error').text(`Sorry! Can't submit empty tweets.`);
-      setTimeout(() => $(this).find('.error').text(''), 1500);
+      $error.text(`Sorry! Can't submit empty tweets.`);
+      setTimeout(() => $error.text(''), 1500);
     }
 
     });
